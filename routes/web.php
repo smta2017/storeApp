@@ -14,6 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|*/
+Route::get('welcome/{locale}', function ($locale) {
+    App::setLocale($locale);
+    echo __('messages.welcome');
+});
+
 // Auth::routes();
 Auth::routes(['verify' => true]);
 
