@@ -29643,7 +29643,9 @@ code[class*='language-'], pre[class*='language-'] {
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
-
+@media (min-width: 576px) {
+  body.vertical-layout.vertical-menu-modern.menu-flipped .main-menu {
+    left: 0; } }
 
 body.vertical-layout.vertical-menu-modern .navbar .navbar-brand {
   white-space: nowrap; }
