@@ -6,9 +6,18 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
+@import '../../public/app-assets/css-rtl/vendors.css';
+@import '../../public/app-assets/vendors/css/ui/prism.min.css';
+@import '../../public/app-assets/css-rtl/app.css';
+@import '../../public/app-assets/css-rtl/custom-rtl.css';
+@import '../../public/app-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css';
+@import '../../public/app-assets/css-rtl/core/colors/palette-gradient.css';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// @import '../../public/app-assets/css-rtl/bootstrap.css';
+
+// app-assets/vendors/css/ui/prism.min.css
+// .navbar-laravel {
+//   background-color: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }
