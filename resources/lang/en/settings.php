@@ -3,6 +3,6 @@
 
 return [
     'appdir' => 'ltr',
-    'csssheet' => 'custom.min',
+    'csssheet' => '',
     'nav_menu_dir' => 'right'
 ];

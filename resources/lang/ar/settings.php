@@ -3,6 +3,6 @@
 
 return [
     'appdir' => 'rtl',
-    'csssheet' => 'custom-ar',
+    'csssheet' => '-rtl',
     'nav_menu_dir' => 'left'
 ];
