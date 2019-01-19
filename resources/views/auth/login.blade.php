@@ -1,73 +1,130 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+<!DOCTYPE html>
+<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-textdirection="{{__('settings.appdir')}}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+  <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+  <meta name="author" content="PIXINVENT">
+  <title>Login Page - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
+    Dashboard
+  </title>
+  <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+  rel="stylesheet">
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
+  rel="stylesheet">
+  <!-- BEGIN VENDOR CSS-->
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/vendors.css">
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/icheck.css">
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/icheck/custom.css">
+  <!-- END VENDOR CSS-->
+  <!-- BEGIN MODERN CSS-->
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/app.css">
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/custom-rtl.css">
+  <!-- END MODERN CSS-->
+  <!-- BEGIN Page Level CSS-->
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css">
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="../../../app-assets/css-rtl/pages/login-register.css">
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
+  <!-- END Custom CSS-->
+</head>
+<body class="vertical-layout vertical-menu-modern 1-column   menu-expanded blank-page blank-page"
+data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
+  <div class="app-content content">
+    <div class="content-wrapper">
+      <div class="content-header row">
+      </div>
+      <div class="content-body">
+        <section class="flexbox-container">
+          <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="col-md-4 col-10 box-shadow-2 p-0">
+              <div class="card border-grey border-lighten-3 m-0">
+                <div class="card-header border-0">
+                  <div class="card-title text-center">
+                    <div class="p-1">
+                      <img src="../../../app-assets/images/logo/logo-dark.png" alt="branding logo">
+                    </div>
+                  </div>
+                  <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
+                    <span>{{__('login.form-title')}}</span>
+                  </h6>
                 </div>
+                <div class="card-content">
+                  <div class="card-body">
+                    <form class="form-horizontal form-simple" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <fieldset class="form-group position-relative has-icon-left mb-0">
+                      <input id="email" type="email" placeholder="Your email" class="form-control form-control-lg input-lg" name="email" value="{{ old('email') }}" required autofocus>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+                        <div class="form-control-position">
+                          <i class="ft-user"></i>
+                        </div>
+                      </fieldset>
+                      <fieldset class="form-group position-relative has-icon-left">
+                      <input id="password" type="password" placeholder="Enter Password" class="form-control form-control-lg input-lg" name="password" required>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
+                     
+                        <div class="form-control-position">
+                          <i class="la la-key"></i>
+                        </div>
+                      </fieldset>
+                      <div class="form-group row">
+                        <div class="col-md-6 col-12 text-center text-md-left">
+                          <fieldset>
+                            <input type="checkbox" id="remember-me" class="chk-remember">
+                            <label for="remember-me"> Remember Me</label>
+                          </fieldset>
+                        </div>
+                        <div class="col-md-6 col-12 text-center text-md-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
+                      </div>
+                      <button type="submit" class="btn btn-info btn-lg btn-block"><i class="ft-unlock"></i> {{__('login.login-button')}} </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="">
+                    <p class="float-sm-left text-center m-0"><a href="recover-password.html" class="card-link">Recover password</a></p>
+                    <p class="float-sm-right text-center m-0">New to Moden Admin? <a href="register-simple.html" class="card-link">Sign Up</a></p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+        </section>
+      </div>
     </div>
-</div>
-@endsection
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
+  <!-- BEGIN VENDOR JS-->
+  <script src="../../../app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+  <!-- BEGIN VENDOR JS-->
+  <!-- BEGIN PAGE VENDOR JS-->
+  <script src="../../../app-assets/vendors/js/forms/icheck/icheck.min.js" type="text/javascript"></script>
+  <script src="../../../app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"
+  type="text/javascript"></script>
+  <!-- END PAGE VENDOR JS-->
+  <!-- BEGIN MODERN JS-->
+  <script src="../../../app-assets/js/core/app-menu.js" type="text/javascript"></script>
+  <script src="../../../app-assets/js/core/app.js" type="text/javascript"></script>
+  <!-- END MODERN JS-->
+  <!-- BEGIN PAGE LEVEL JS-->
+  <script src="../../../app-assets/js/scripts/forms/form-login-register.js" type="text/javascript"></script>
+  <!-- END PAGE LEVEL JS-->
+</body>
+</html>

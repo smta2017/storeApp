@@ -4,5 +4,6 @@
 return [
     'appdir' => 'rtl',
     'csssheet' => '-rtl',
-    'nav_menu_dir' => 'left'
+    'nav_menu_dir' => 'left',
+    'localeFlag' => 'eg'
 ];
