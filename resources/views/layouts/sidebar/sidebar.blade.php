@@ -7,8 +7,12 @@
       </li>
       <li class=" nav-item"><a href="#"><i class="la la-android"></i><span class="menu-title" data-i18n="nav.menu_levels.main">Menu levels</span></a>
           <ul class="menu-content">
-            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level">Second level</a>
+
+            <li><router-link class="menu-item" to="/dash" data-i18n="nav.menu_levels.second_level">Second level</router-link>
             </li>
+            <li><router-link class="menu-item" to="/blank" data-i18n="nav.menu_levels.second_level">Second level</router-link>
+            </li>
+
             <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">Second level child</a>
               <ul class="menu-content">
                 <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Third level</a>

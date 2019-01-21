@@ -11,7 +11,8 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
 
-    // require('bootstrap');
+    //this is privet laravel Bootstrap - need to stop to run my custom template with it template
+    require('bootstrap');  
 } catch (e) {}
 
 /**

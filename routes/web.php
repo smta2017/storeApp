@@ -37,6 +37,10 @@ Auth::routes(['verify' => true]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+
+
+Route::get('{path}', 'HomeController@index')->where('path','([A-z\d-\/_.]+)?' );
  
 
 
@@ -44,6 +48,6 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 
 //-------------------------------------
-// Route::get('/bp', function () {
-//     return view('blankPage');
-// });
+Route::get('/bp', function () {
+    return view('blankPage');
+});

@@ -37,11 +37,13 @@
 </head>
 <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
 data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+<div id="app">
 @include('layouts.header.header')
   <!-- ////////////////////////////////////////////////////////////////////////////-->
   @include('layouts.sidebar.sidebar')
-  <div class="app-content content">
-  @yield('content')
+  <div class="app-content content" >
+  <router-view></router-view>
+  
   </div>
   <!-- ////////////////////////////////////////////////////////////////////////////-->
   <footer class="footer footer-static footer-light navbar-border navbar-shadow">
@@ -51,6 +53,7 @@ data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
       <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted & Made with <i class="ft-heart pink"></i></span>
     </p>
   </footer>
+</div>
   <!-- BEGIN VENDOR JS-->
   <script src="../../../app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
   <!-- BEGIN VENDOR JS-->
